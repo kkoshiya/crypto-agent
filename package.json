@@ -1,0 +1,28 @@
+{
+  "name": "scratch",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "buidl": "tsc",
+    "start": "tsc && node dist/index.js",
+    "bot": "tsc && node ./src/bot.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "ethers": "^6.13.4",
+    "fhenixjs": "^0.4.1",
+    "openai": "^4.76.3",
+    "readline": "^1.3.0",
+    "telegraf": "^4.16.3",
+    "telegraph": "^0.8.22",
+    "typescript": "^5.7.2",
+    "viem": "^2.21.55"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7"
+  }
+}
