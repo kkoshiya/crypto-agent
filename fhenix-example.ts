@@ -24,7 +24,7 @@ async function getCipherText() {
     console.log(provider1);
     const signer = await provider1.getSigner();
     console.log(signer);
-    const permit = await generatePermit(contractAddress, adminWallet as SupportedProvider);
+    const permit = await client.generatePermit(contractAddress, provider1 as SupportedProvider, adminWallet);
     if (!permit) throw new Error("Failed to get permit");
     console.log(permit);
     // const permission = await client.extractPermitPermission(permit);
