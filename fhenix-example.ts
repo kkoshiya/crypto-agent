@@ -22,15 +22,13 @@ async function getCipherText() {
     console.log("Getting cipher text");
     await provider1.ready;
     console.log(provider1);
-    const signer = await provider1.getSigner();
-    console.log(signer);
     const permit = await client.generatePermit(contractAddress, provider1 as SupportedProvider, adminWallet);
     if (!permit) throw new Error("Failed to get permit");
     console.log(permit);
-    // const permission = await client.extractPermitPermission(permit);
-    // const response = await contractInstance.getSealedOutput(permission);
-    // const plaintext = client.unseal(contractAddress, response, adminWallet.address);
-    // console.log(`SealOutput: ${plaintext}`);
+    const permission = await client.extractPermitPermission(permit);
+    const response = await contractInstance.getSealedOutput(permission);
+    const plaintext = client.unseal(contractAddress, response, adminWallet.address);
+    console.log(`SealOutput: ${plaintext}`);
 }
 
 getCipherText().catch(console.error);
