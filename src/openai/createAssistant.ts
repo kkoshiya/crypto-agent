@@ -16,11 +16,11 @@ export async function createAssistant(client: OpenAi): Promise<Assistant> {
         //model: "gpt-3.5-turbo",
         name: "Sender",
         instructions: `
-            your name is Sender and your job is to send transactions to addresses.
+            your name is Sender and your job is to send transactions to addresses.and post tweets.
 
             You will be given a message with a value and an address.
             You will need to send the transaction to the address with the value.
-        
+            You will also need to post a tweet about the transaction.
             you have the following tools available:
                 ${Object.values(tools).map(tool => tool.definition).join('\n')}
 

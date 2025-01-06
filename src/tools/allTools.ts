@@ -1,6 +1,7 @@
 import { getBalanceTool } from "./getBalance";
 import { sendTransactionTool } from "./sendTransaction";
 import { getWalletAddressTool } from "./getWalletAddress";
+import { sendTweetTool } from "./sendTweet";
 
 export interface ToolConfig<T = any> {
     definition: {
@@ -21,5 +22,6 @@ export interface ToolConfig<T = any> {
 export const tools: Record<string, ToolConfig> = {
     getBalance: getBalanceTool,
     sendTransaction: sendTransactionTool,
-    getWalletAddress: getWalletAddressTool
+    getWalletAddress: getWalletAddressTool,
+    sendTweet: sendTweetTool
 };
