@@ -6,7 +6,7 @@ import { performRun } from './openai/performRun';
 
 async function main() {
     const client = new OpenAi();
-    const message = "send .011 ETH to the address 0x17e968F5C0472941767F06b660Ab2E7149Bdf7ED and then post a tweet about it";
+    const message = "encrypt the number 100 with a bit length of 8, then return the encryptedAmount";
     const assistant = await createAssistant(client);
     const thread = await createThread(client, message);
     const run = await createRun(client, thread, assistant.id);
