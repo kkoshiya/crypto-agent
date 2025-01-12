@@ -6,7 +6,7 @@ import { performRun } from './openai/performRun';
 
 async function main() {
     const client = new OpenAi();
-    const message = "encrypt the number 100 with a bit length of 8, then return the encryptedAmount";
+    const message = "what was the last thing that you were asked to encrypt?";
     const assistant = await createAssistant(client);
     const thread = await createThread(client, message);
     const run = await createRun(client, thread, assistant.id);

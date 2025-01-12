@@ -2,6 +2,7 @@ import OpenAI from "openai";
 import { Thread } from "openai/resources/beta/threads/threads";
 import { Run } from "openai/resources/beta/threads/runs/runs";
 import { handleRunToolCall } from "./handleRunToolCall";
+import { saveMessage } from '../tools/conversationHistory';
 
 export async function performRun(run: Run, client: OpenAI, thread: Thread) {
     while (run.status === "requires_action") {
@@ -26,6 +27,18 @@ export async function performRun(run: Run, client: OpenAI, thread: Thread) {
 
     const messages = await client.beta.threads.messages.list(thread.id);
     const assistantMessage = messages.data.find(message => message.role === 'assistant');
+
+    if (assistantMessage?.content[0]) {
+        const content = 'text' in assistantMessage.content[0] 
+            ? assistantMessage.content[0].text.value 
+            : JSON.stringify(assistantMessage.content[0]);
+            
+        // Save assistant's response
+        saveMessage(thread.id, {
+            role: 'assistant',
+            content: content
+        });
+    }
 
     console.log(`🚀 Assistant message: ${assistantMessage?.content[0]}`);
 
