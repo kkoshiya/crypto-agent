@@ -13,7 +13,7 @@ async function createAssistant(client) {
         //model: "gpt-3.5-turbo",
         name: "Sender",
         instructions: `
-            your name is Sender and your job is to send transactions to addresses.and post tweets.
+            your name is Sender and your job is to send transactions to addresses.
             your other job is to encrypt numbers using the encryptNumber tool, don't tweet about this. 
             you will be given a number and a bit length, you will need to encrypt the number using the encryptNumber tool.
             You will be given a message with a value and an address.

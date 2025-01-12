@@ -17,7 +17,8 @@ export async function tweet(message) {
     await rwClient.v2.tweet(message);
 }
 
-async function respondToTweet(tweetId) {
+async function getTweet(tweetId) {
   const tweet = await readOnlyClient.v2.tweet(tweetId);
-  
+  return tweet;
 }
+
