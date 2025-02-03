@@ -11,7 +11,7 @@ const createRun_1 = require("./openai/createRun");
 const performRun_1 = require("./openai/performRun");
 async function main() {
     const client = new openai_1.default();
-    const message = "what was the last thing that you were asked to encrypt?";
+    const message = "send .01 to the address 0x17e968F5C0472941767F06b660Ab2E7149Bdf7ED and then tweet about it";
     const assistant = await (0, createAssistant_1.createAssistant)(client);
     const thread = await (0, createThread_1.createThread)(client, message);
     const run = await (0, createRun_1.createRun)(client, thread, assistant.id);

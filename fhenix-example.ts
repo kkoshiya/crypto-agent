@@ -21,7 +21,7 @@ async function getCipherText() {
     const provider1 = new ethers.JsonRpcProvider('https://api.nitrogen.fhenix.zone');
     console.log("Getting cipher text");
     await provider1.ready;
-    console.log(provider1);
+    //console.log(provider1);
     const permit = await client.generatePermit(contractAddress, provider1 as SupportedProvider, adminWallet);
     if (!permit) throw new Error("Failed to get permit");
     console.log(permit);

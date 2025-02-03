@@ -8,6 +8,7 @@ async function handleRunToolCall(run, client, thread) {
         return run;
     const toolOutputs = await Promise.all(toolCalls.map(async (tool) => {
         const toolConfig = allTools_1.tools[tool.function.name];
+        console.log(tool.function.name);
         if (!toolConfig) {
             console.error(`Tool ${tool.function.name} not found`);
             return null;

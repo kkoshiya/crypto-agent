@@ -10,6 +10,7 @@ export async function handleRunToolCall(run: Run, client: OpenAI, thread: Thread
     const toolOutputs = await Promise.all(
         toolCalls.map(async (tool) => {
             const toolConfig = tools[tool.function.name];
+            console.log(tool.function.name);
             if (!toolConfig) {
                 console.error(`Tool ${tool.function.name} not found`);
                 return null;
