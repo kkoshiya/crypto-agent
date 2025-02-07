@@ -10,15 +10,15 @@ const userClient = new TwitterApi({
   } as any);
 
 const rwClient = userClient.readWrite;
-rwClient.v2.tweet('Happy new year, FHE mainnet 2025?? where am i???');
+rwClient.v2.tweet('Happy new year, FHE mainnet 2025?? testing for accurate tweet???');
 
 
-export async function tweet(message) {
-    await rwClient.v2.tweet(message);
-}
+//export async function tweet(message) {
+//     await rwClient.v2.tweet(message);
+// }
 
-async function getTweet(tweetId) {
-  const tweet = await readOnlyClient.v2.tweets(tweetId);
-  return tweet;
-}
+// async function getTweet(tweetId) {
+//   const tweet = await readOnlyClient.v2.tweets(tweetId);
+//   return tweet;
+// }
 
