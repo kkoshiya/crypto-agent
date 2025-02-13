@@ -3,6 +3,7 @@ import { sendTransactionTool } from "./sendTransaction";
 import { getWalletAddressTool } from "./getWalletAddress";
 import { sendTweetTool } from "./sendTweet";
 import { encryptNumberTool } from "./encryptNumber";
+import { getSealedOutputTool } from "./getSealedOutput";
 
 export interface ToolConfig<T = any> {
     definition: {
@@ -25,5 +26,6 @@ export const tools: Record<string, ToolConfig> = {
     sendTransaction: sendTransactionTool,
     getWalletAddress: getWalletAddressTool,
     sendTweet: sendTweetTool,
-    encryptNumber: encryptNumberTool
+    encryptNumber: encryptNumberTool,
+    getSealedOutput: getSealedOutputTool
 };
