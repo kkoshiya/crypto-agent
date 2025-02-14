@@ -20,5 +20,18 @@ bot.command('ai', async (ctx) => {
     ctx.reply(result);
 });
 
+bot.command('ai-secondTest', async (ctx) => {
+    // Extract the text after "/ai "
+    const message = ctx.message.text.slice(4).trim(); // Remove "/ai " from the start
+    
+    if (!message) {
+        return ctx.reply('Please provide a message after /ai');
+    }
+
+    const result = await triggerAgent(message);
+    ctx.reply(result);
+});
+
+
 // Remove the general message handler to only respond to /ai commands
 bot.launch();
